@@ -44,9 +44,9 @@ class Waveform(Pulse):
         """
 
         super().__init__(duration=len(samples), name=name, limit_amplitude=limit_amplitude)
-        samples = np.asarray(samples, dtype=np.complex_)
+        # samples = np.asarray(samples, dtype=np.complex_)
         self.epsilon = epsilon
-        self._samples = self._clip(samples, epsilon=epsilon)
+        self._samples = samples #self._clip(samples, epsilon=epsilon)
 
     @property
     def samples(self) -> np.ndarray:
