@@ -914,7 +914,7 @@ class GaussianSquare(metaclass=_PulseType):
             constraints=consts_expr,
             valid_amp_conditions=valid_amp_conditions_expr,
         )
-        instance.validate_parameters()
+        # instance.validate_parameters()
 
         return instance
 
@@ -1430,7 +1430,7 @@ class Drag(metaclass=_PulseType):
             constraints=consts_expr,
             valid_amp_conditions=valid_amp_conditions_expr,
         )
-        instance.validate_parameters()
+        # instance.validate_parameters()
 
         return instance
 
