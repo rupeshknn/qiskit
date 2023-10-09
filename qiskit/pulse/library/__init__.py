@@ -49,8 +49,6 @@ Pulse Models
 
    Waveform
    SymbolicPulse
-   ParametricPulse
-
 
 .. _waveforms:
 
@@ -112,7 +110,6 @@ from .discrete import (
     gaussian_square,
     drag,
 )
-from .parametric_pulses import ParametricPulse
 from .symbolic_pulses import (
     SymbolicPulse,
     ScalableSymbolicPulse,

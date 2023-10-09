@@ -50,12 +50,12 @@ class ParametricPulseShapes(Enum):
     @classmethod
     def from_instance(
         cls,
-        instance: Union[library.ParametricPulse, library.SymbolicPulse],
+        instance: library.SymbolicPulse,
     ) -> "ParametricPulseShapes":
         """Get Qobj name from the pulse class instance.
 
         Args:
-            instance: Symbolic or ParametricPulse class.
+            instance: SymbolicPulse class.
 
         Returns:
             Qobj name.
@@ -65,14 +65,6 @@ class ParametricPulseShapes(Enum):
         """
         if isinstance(instance, library.SymbolicPulse):
             return cls(instance.pulse_type)
-        if isinstance(instance, library.parametric_pulses.Gaussian):
-            return ParametricPulseShapes.gaussian
-        if isinstance(instance, library.parametric_pulses.GaussianSquare):
-            return ParametricPulseShapes.gaussian_square
-        if isinstance(instance, library.parametric_pulses.Drag):
-            return ParametricPulseShapes.drag
-        if isinstance(instance, library.parametric_pulses.Constant):
-            return ParametricPulseShapes.constant
 
         raise QiskitError(f"'{instance}' is not valid pulse type.")
 
@@ -354,7 +346,7 @@ class InstructionToQobjConverter:
         Returns:
             Qobj instruction data.
         """
-        if isinstance(instruction.pulse, (library.ParametricPulse, library.SymbolicPulse)):
+        if isinstance(instruction.pulse, library.SymbolicPulse):
             params = dict(instruction.pulse.parameters)
             # IBM backends expect "amp" to be the complex amplitude
             if "amp" in params and "angle" in params:

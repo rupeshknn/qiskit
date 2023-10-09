@@ -138,8 +138,8 @@ class TestWaveform(QiskitTestCase):
             self.fail("Waveform incorrectly failed to approximately unit norm samples.")
 
 
-class TestParametricPulses(QiskitTestCase):
-    """Tests for all subclasses of ParametricPulse."""
+class TestSymbolicPulses(QiskitTestCase):
+    """Tests for all subclasses of SymbolicPulse."""
 
     def test_construction(self):
         """Test that parametric pulses can be constructed without error."""

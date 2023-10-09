@@ -97,7 +97,7 @@ class TestWaveformGenerators(QiskitTestCase):
         np.testing.assert_array_equal(y, y_ref)
 
     def test_parse_waveform_parametric(self):
-        """Test helper function that parse waveform with ParametricPulse instance."""
+        """Test helper function that parse waveform with SymbolicPulse instance."""
         test_pulse = pulse.library.Gaussian(10, 0.1, 3)
 
         inst = pulse.Play(test_pulse, pulse.DriveChannel(0))
