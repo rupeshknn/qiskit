@@ -1,0 +1,6 @@
+---
+upgrade:
+  - |
+    qiskit.quantum_info.random`
+    Removes deprecated class :class:`pulse.library.ParametricPulse` and its subclasses. Has been replaced by 
+    :class:`pulse.library.SymbolicPulse`. 
